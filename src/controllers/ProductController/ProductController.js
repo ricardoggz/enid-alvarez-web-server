@@ -22,7 +22,10 @@ export function getProducts(req, res){
         FROM
         products
         LEFT JOIN
-        imagenes ON imagenes.product_id = products.product_id;`,
+        imagenes ON imagenes.product_id = products.product_id
+        GROUP BY
+        products.product_id;
+        `,
         (err, rows)=>{
             if(err) return res.json(err)
             return res.json(rows)
