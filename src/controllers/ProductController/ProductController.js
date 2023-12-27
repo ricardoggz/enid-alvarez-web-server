@@ -19,6 +19,11 @@ export function getProducts(req, res) {
           WHERE hilos.producto_id = productos.producto_id
         ) as thread_price,
         (
+          SELECT kit_precio
+          FROM kits
+          WHERE kits.kit_id = productos.producto_id
+        ) as kit_price,
+        (
             SELECT bolso_imagen
             FROM bolsos
             WHERE bolsos.producto_id = productos.producto_id
@@ -28,6 +33,11 @@ export function getProducts(req, res) {
             FROM hilos
             WHERE hilos.producto_id = productos.producto_id
         ) as thread_image,
+        (
+          SELECT kit_imagen
+          FROM kits
+          WHERE kits.producto_id = productos.producto_id
+      ) as kit_image,
         JSON_ARRAYAGG(JSON_OBJECT(
         'imagen_id', imagenes.id_imagen,
         'imagen_ruta', imagenes.url_imagen
