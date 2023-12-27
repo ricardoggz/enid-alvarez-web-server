@@ -11,7 +11,7 @@ export function getProducts(req, res) {
         (
           SELECT bolso_precio
           FROM bolsos
-          WHERE bolsos.bolso_id = productos.producto_id
+          WHERE bolsos.producto_id = productos.producto_id
         ) as bag_price,
         (
           SELECT hilo_precio
@@ -21,7 +21,7 @@ export function getProducts(req, res) {
         (
           SELECT kit_precio
           FROM kits
-          WHERE kits.kit_id = productos.producto_id
+          WHERE kits.producto_id = productos.producto_id
         ) as kit_price,
         (
             SELECT bolso_imagen
