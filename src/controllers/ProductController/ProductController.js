@@ -8,6 +8,7 @@ export function getProducts(req, res) {
       `SELECT 
         productos.producto_id as product_id,
         productos.nombre_producto as product_name,
+        productos.categoria_id as category_id,
         (
           SELECT bolso_precio
           FROM bolsos
