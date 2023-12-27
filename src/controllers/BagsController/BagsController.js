@@ -6,7 +6,7 @@ export function getBags(req, res){
         if(err) return res.json(err)
         conn.query(
             `SELECT
-            bolsos.bolso_id AS product_id,
+            bolsos.producto_id AS product_id,
             bolsos.bolso_nombre AS product_name,
             bolsos.bolso_precio AS product_price,
             bolsos.bolso_imagen AS product_image,
