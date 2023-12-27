@@ -6,7 +6,7 @@ export function getKits(req, res){
         if(err) return res.json(err)
         conn.query(
             `SELECT
-            kits.product_id AS product_id,
+            kits.producto_id AS product_id,
             kits.kit_nombre AS product_name,
             kits.kit_precio AS product_price,
             kits.kit_imagen AS product_image,
